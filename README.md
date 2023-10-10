@@ -28,7 +28,7 @@ Common Tag: data-science, python, data-visualization, sql, data-analytics, excel
 
 **Algorithm:** Univariate Linear Regression, Multivariate Linear Regression
 
-**Libraries:** Pandas, NumPy, Scikit-Learn, Matplotlib, Seaborn, Execdata  
+**Libraries:** Pandas, NumPy, Scikit-Learn, Matplotlib, Seaborn, Execdata
 
 **Projects:** ABC Project Name
 
@@ -55,15 +55,18 @@ There are two tables could be merged by ID
 | Median House Value | Average House Value  | US Dollar | Binary Category     | Traget Variable |
 | Ocean Proximity    | How Far Near Ocean   |           | Non Binary Category | ----------      |
 
-**Reference:**  
-Video Reference:<a href="https://www.youtube.com/watch?v=fPufVcItDzs&list=PLQVvvaa0QuDfSfqQuee6K8opKtZsh7sA9&index=3"><Resource Name-Youtube> Youtube Video Reference</a>    
-Resource Reference:<a href="https://www.kaggle.com/datasets/rikdifos/credit-card-approval-prediction/code?datasetId=426827&sortBy=voteCount"><Resource Name-Kaggle> Kaggle Problem Reference</a>  
+**Reference:**
+
+<!-- Video Reference:<a href="https://www.youtube.com/watch?v=HEaFU68WAPM"><Resource Name-Youtube> Youtube Video Reference</a>     -->
+
+<!-- Resource Reference:<a href="https://github.com/rajtilakls2510/car_price_predictor"><Resource Name-Github> Github Repository Reference</a>   -->
+
 Dateset:<a href="https://raw.githubusercontent.com/bdfd/Portfolio_Project_10-Salary_Prediction/main/dataset/Salary.csv">Original Dataset.csv</a>  
 Dateset:<a href="https://raw.githubusercontent.com/bdfd/Portfolio_Project_10-Salary_Prediction/main/dataset/Salary.csv">Processed Dataset.csv</a>  
 Train Processed Dataset:<a href="https://raw.githubusercontent.com/bdfd/Portfolio_Project_10-Salary_Prediction/main/display%20demo/train_x.csv">Train_X.csv</a>,
 <a href="https://raw.githubusercontent.com/bdfd/Portfolio_Project_10-Salary_Prediction/main/display%20demo/train_y.csv">Train_y.csv</a>  
 Test Processed Dataset:<a href="https://raw.githubusercontent.com/bdfd/Portfolio_Project_10-Salary_Prediction/main/display%20demo/test_x.csv">Test_X.csv</a>,
-<a href="https://raw.githubusercontent.com/bdfd/Portfolio_Project_10-Salary_Prediction/main/display%20demo/test_y.csv">Test_y.csv</a>   
+<a href="https://raw.githubusercontent.com/bdfd/Portfolio_Project_10-Salary_Prediction/main/display%20demo/test_y.csv">Test_y.csv</a>  
 Demo:<a href="https://github.com/bdfd/Portfolio_Project_10-Salary_Prediction/blob/main/Salary_Prediction.ipynb">Jupyter Notebook/Colab Link</a>  
 Visualization:<a href="https://github.com/bdfd/Section6.Project04_Customer_Segmentation/blob/main/display%20demo/Clustering_Bivariate.png">Train Result</a>,<a href="https://github.com/bdfd/Portfolio_Project_10-Salary_Prediction/blob/main/display%20demo/test%20result.png">Test Result</a>
 <br>
