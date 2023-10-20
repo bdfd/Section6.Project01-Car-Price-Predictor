@@ -2,24 +2,19 @@
  * @Date         : 2022-12-05 14:13:08
  * @Author       : BDFD,bdfd2005@gmail.com
  * @Github       : https://github.com/bdfd
- * @LastEditTime : 2022-12-08 14:21:20
+ * @LastEditTime : 2023-10-20 13:54:57
  * @LastEditors  : BDFD
  * @Description  : 
- * @FilePath     : \templates\view.html
+ * @FilePath     : \predict\templates\home.html
  * Copyright (c) 2022 by BDFD, All Rights Reserved. 
 -->
 
-{% extends "base.html" %}
+{% extends "./layout/base.html" %}
 {% block title%}
-View All User
+Second Home/Index
 {% endblock %}
 
 {% block content %}
-<h1>Hello, This is View Page!</h1>
-<div>
-    {% for item in values %}
-    <p>Name: {{item.name}}</p>
-    <p>Email: {{item.email}}</p>
-    {% endfor %}
-</div>
+<h1>Hello, Index PaGe!</h1>
+<p>abc</p>
 {% endblock %}
