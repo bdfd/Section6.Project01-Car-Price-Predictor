@@ -2,7 +2,7 @@
 Date         : 2022-12-09 12:54:06
 Author       : BDFD,bdfd2005@gmail.com
 Github       : https://github.com/bdfd
-LastEditTime : 2023-10-24 17:17:04
+LastEditTime : 2023-10-24 17:19:31
 LastEditors  : BDFD
 Description  : 
 FilePath     : \predict\predict.py
@@ -16,7 +16,7 @@ predict = Blueprint('predict', __name__,
 
 @predict.route('/')
 def predict_index():
-    return render_template('homepage/home.html')
+    return render_template('homepage/predict_index.html')
 
 
 # @predict.route('/home')
