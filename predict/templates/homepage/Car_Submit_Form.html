@@ -2,17 +2,93 @@
  * @Date         : 2023-10-20 14:26:16
  * @Author       : BDFD,bdfd2005@gmail.com
  * @Github       : https://github.com/bdfd
- * @LastEditTime : 2023-10-24 17:46:19
+ * @LastEditTime : 2023-10-25 16:08:43
  * @LastEditors  : BDFD
  * @Description  : 
  * @FilePath     : \predict\templates\homepage\Car_Submit_Form.html
  * Copyright (c) 2023 by BDFD, All Rights Reserved. 
 -->
-<form>
-    <select class="form-select" aria-label="Default select example">
-        <option selected>Open this select menu</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-    </select>
+<form action="#" method="POST" id="myForm"
+    style="margin-top:0px;font-family:'Times New Roman',楷体;" onsubmit=" "
+    name="myForm">
+    <div class="input-group">
+        <span
+            style="font-family:楷体;font-size:14px;margin-left:6px">项目描述（选填）&nbsp&nbsp</span>
+        <div>
+            <input type=" text" class="form-control" name="mingzi"
+                value="{{mingzi}}"
+                style="height:25px;width:475px;font-size:14px;margin-left:10px;border-radius:5px">
+        </div>
+    </div>
+    <br />
+    <div class="input-group">
+        <span
+            style="font-family:楷体;font-size:14px;margin-left:6px">土体初始体积含水率&nbsp</span>
+        <div>
+            <input type=" text" class="form-control" name="thetai"
+                value="{{test2}}"
+                style="height:25px;width:115px;font-size:14px;margin-left:3px;border-radius:5px">
+        </div>
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <span
+            style="font-family:楷体;font-size:14px;margin-left:10px">土体孔隙率&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+        <div><input type=" text" class="form-control" name="thetas"
+                value="{{test3}}"
+                style="height:25px;width:115px;font-size:14px;margin-left:3px;border-radius:5px">
+        </div>
+    </div>
+    <br />
+    <div class="input-group">
+        <span
+            style="font-family:'Times New Roman',楷体;font-size:14px;margin-left:6px">土体吸力水头&nbsp(m)
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+        <div><input type=" text" class="form-control" name="psi"
+                value="{{test4}}"
+                style="height:25px;width:115px;font-size:14px;;border-radius:5px">
+        </div>
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <span
+            style="font-family:'Times New Roman',楷体;font-size:14px;margin-left:6px">土体渗透系数&nbsp(cm/h)&nbsp&nbsp&nbsp</span>
+        <div>
+            <input type=" text" class="form-control" name="k" value="{{test5}}"
+                style="height:25px;width:115px;font-size:14px;;border-radius:5px">
+        </div>
+    </div>
+    <br />
+    <div class="input-group">
+        <span
+            style="font-family:'Times New Roman',楷体;font-size:14px;margin-left:6px">时间步长&nbsp(min)
+            <sup>1</sup>
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&#8197</span>
+        <div><input type=" text" class="form-control" name="dti"
+                value="{{test7}}"
+                style="height:25px;width:115px;font-size:14px;margin-left:5px;border-radius:5px">
+        </div>
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <span
+            style="font-family:'Times New Roman',楷体;font-size:14px;margin-left:6px">总时间步长数
+            <sup>2</sup>
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+        <div style="margin-left:10px">
+            <input type=" text" class="form-control" name="nin"
+                value="{{test8}}"
+                style="height:25px;width:115px;font-size:14px;border-radius:5px">
+        </div>
+    </div>
+    <br />
+    <div style="border: 0.5px solid #CCC;margin-top:5px;">
+    </div>
+    <h5 style="margin-bottom:15px;margin-top:15px;" align="right">
+        <button type=" submit" name="calculate" value="计 算"
+            class="btn btn-secondary"
+            style="font-family: 楷体;background-color: rgb(230, 230, 230);color:red;width:250px;height:28px;padding-top:0px;"><strong>计&nbsp算
+                (结果见下!)</strong></button>
+    </h5>
 </form>
+<!-- <div class="card" id="p3"> -->
+<div class="card-header pagebreak"
+    style="padding: 0rem;padding-top:0.5rem;padding-bottom:0.5rem;background-color:rgb(233, 236, 239) ;">
+    <h5 style="font-family: 楷体; margin-bottom: 0px;" align="left">
+        <strong>计算结果</strong>
+    </h5>
+</div>
