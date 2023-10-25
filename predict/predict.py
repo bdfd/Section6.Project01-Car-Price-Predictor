@@ -2,7 +2,7 @@
 Date         : 2022-12-09 12:54:06
 Author       : BDFD,bdfd2005@gmail.com
 Github       : https://github.com/bdfd
-LastEditTime : 2023-10-25 16:43:12
+LastEditTime : 2023-10-25 17:48:22
 LastEditors  : BDFD
 Description  : 
 FilePath     : \predict\predict.py
@@ -22,13 +22,15 @@ df = pd.read_csv(
 df = df.iloc[:, 1:]
 # Check the unique value in company columns
 company_lists = df['company'].unique().tolist()
+name_lists = df['name'].unique().tolist()
 model = temp.Car_Prediction()
 
 
 @predict.route('/', methods=["POST", "GET"])
 def predict_index():
+    print(company_lists)
+    print(name_lists)
     if request.method == "POST":
-        print(company_lists)
         mingzi = request.form["mingzi"]
         name = request.form["name"]
         company = request.form["company"]
@@ -45,7 +47,7 @@ def predict_index():
               type(year), type(kms_driven), type(fuel_type))
         return render_template('homepage/predict_index.html', result=result, name=name, mingzi=mingzi, company=company, year=year, kms_driven=kms_driven, fuel_type=fuel_type)
     else:
-        return render_template('homepage/predict_index.html')
+        return render_template('homepage/predict_index.html', companies=company_lists, car_models=name_lists)
 
 
 # @predict.route('/home')
