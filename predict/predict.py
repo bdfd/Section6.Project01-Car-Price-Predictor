@@ -2,7 +2,7 @@
 Date         : 2022-12-09 12:54:06
 Author       : BDFD,bdfd2005@gmail.com
 Github       : https://github.com/bdfd
-LastEditTime : 2023-10-25 16:15:17
+LastEditTime : 2023-10-25 16:43:12
 LastEditors  : BDFD
 Description  : 
 FilePath     : \predict\predict.py
@@ -12,7 +12,7 @@ from flask import Blueprint, render_template, request
 import pandas as pd
 import numpy as np
 import tempproj as temp
-
+import execdata as exe
 predict = Blueprint('predict', __name__,
                     static_folder='static', template_folder='templates')
 
@@ -28,19 +28,22 @@ model = temp.Car_Prediction()
 @predict.route('/', methods=["POST", "GET"])
 def predict_index():
     if request.method == "POST":
-        print(company_lists)        
+        print(company_lists)
+        mingzi = request.form["mingzi"]
+        name = request.form["name"]
+        company = request.form["company"]
+        year = request.form["year"]
+        year = exe.convint(year)
+        kms_driven = request.form["kms_driven"]
+        kms_driven = exe.convint(kms_driven)
+        fuel_type = request.form["fuel_type"]
         prediction = model.predict(pd.DataFrame(columns=['name', 'company', 'year', 'kms_driven', 'fuel_type'],
-                                                data=np.array(['Maruti Suzuki Swift', 'Maruti', 2019, 100, 'Petrol']).reshape(1, 5)))
+                                                data=np.array([name, company, year, kms_driven, fuel_type]).reshape(1, 5)))
         result = str(np.round(prediction[0], 2))
         print(result)
-        # mingzi = request.form["mingzi"]
-        # thetai = request.form["thetai"] # Initial soil moisture content
-        # thetas = request.form["thetas"] # Soil moisture content at saturation (i.e. porosity)
-        # Psi = request.form["psi"] # Suction head (m)
-        # K = request.form["k"] # Saturated hydraulic conductivity (cm/h)
-        # dti= request.form["dti"] #6 time interval in the analysis, normally that used in hyetograph (min)
-        # nin= request.form["nin"]# The number of time intervals to be considered in the anlysis
-        return render_template('homepage/predict_index.html', result=result)
+        print(type(mingzi), type(name), type(company),
+              type(year), type(kms_driven), type(fuel_type))
+        return render_template('homepage/predict_index.html', result=result, name=name, mingzi=mingzi, company=company, year=year, kms_driven=kms_driven, fuel_type=fuel_type)
     else:
         return render_template('homepage/predict_index.html')
 

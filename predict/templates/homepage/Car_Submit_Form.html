@@ -2,7 +2,7 @@
  * @Date         : 2023-10-20 14:26:16
  * @Author       : BDFD,bdfd2005@gmail.com
  * @Github       : https://github.com/bdfd
- * @LastEditTime : 2023-10-25 16:08:43
+ * @LastEditTime : 2023-10-25 16:33:09
  * @LastEditors  : BDFD
  * @Description  : 
  * @FilePath     : \predict\templates\homepage\Car_Submit_Form.html
@@ -23,49 +23,52 @@
     <br />
     <div class="input-group">
         <span
-            style="font-family:楷体;font-size:14px;margin-left:6px">土体初始体积含水率&nbsp</span>
+            style="font-family:楷体;font-size:14px;margin-left:6px">Name&nbsp</span>
         <div>
-            <input type=" text" class="form-control" name="thetai"
-                value="{{test2}}"
+            <input type=" text" class="form-control" name="name"
+                value="{{name}}"
                 style="height:25px;width:115px;font-size:14px;margin-left:3px;border-radius:5px">
         </div>
         &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
         <span
-            style="font-family:楷体;font-size:14px;margin-left:10px">土体孔隙率&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
-        <div><input type=" text" class="form-control" name="thetas"
-                value="{{test3}}"
+            style="font-family:楷体;font-size:14px;margin-left:10px">Company&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+        <div><input type=" text" class="form-control" name="company"
+                value="{{company}}"
                 style="height:25px;width:115px;font-size:14px;margin-left:3px;border-radius:5px">
         </div>
     </div>
     <br />
     <div class="input-group">
         <span
-            style="font-family:'Times New Roman',楷体;font-size:14px;margin-left:6px">土体吸力水头&nbsp(m)
+            style="font-family:'Times New Roman',楷体;font-size:14px;margin-left:6px">Year&nbsp(m)
             &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
-        <div><input type=" text" class="form-control" name="psi"
-                value="{{test4}}"
+        <div><input type=" text" class="form-control" name="year"
+                value="{{year}}"
                 style="height:25px;width:115px;font-size:14px;;border-radius:5px">
         </div>
         &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
         <span
-            style="font-family:'Times New Roman',楷体;font-size:14px;margin-left:6px">土体渗透系数&nbsp(cm/h)&nbsp&nbsp&nbsp</span>
+            style="font-family:'Times New Roman',楷体;font-size:14px;margin-left:6px">kms
+            Driven&nbsp(cm/h)&nbsp&nbsp&nbsp</span>
         <div>
-            <input type=" text" class="form-control" name="k" value="{{test5}}"
+            <input type=" text" class="form-control" name="kms_driven"
+                value="{{kms_driven}}"
                 style="height:25px;width:115px;font-size:14px;;border-radius:5px">
         </div>
     </div>
     <br />
     <div class="input-group">
         <span
-            style="font-family:'Times New Roman',楷体;font-size:14px;margin-left:6px">时间步长&nbsp(min)
+            style="font-family:'Times New Roman',楷体;font-size:14px;margin-left:6px">Fuel
+            Type&nbsp(min)
             <sup>1</sup>
             &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&#8197</span>
-        <div><input type=" text" class="form-control" name="dti"
-                value="{{test7}}"
+        <div><input type=" text" class="form-control" name="fuel_type"
+                value="{{fuel_type}}"
                 style="height:25px;width:115px;font-size:14px;margin-left:5px;border-radius:5px">
         </div>
         &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-        <span
+        <!-- <span
             style="font-family:'Times New Roman',楷体;font-size:14px;margin-left:6px">总时间步长数
             <sup>2</sup>
             &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
@@ -73,7 +76,7 @@
             <input type=" text" class="form-control" name="nin"
                 value="{{test8}}"
                 style="height:25px;width:115px;font-size:14px;border-radius:5px">
-        </div>
+        </div> -->
     </div>
     <br />
     <div style="border: 0.5px solid #CCC;margin-top:5px;">
