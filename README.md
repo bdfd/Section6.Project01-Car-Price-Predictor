@@ -1,59 +1,42 @@
-# 3.3-DS_Project_Template
+# Section 6 Project 1 - Car Price Prediction
 
-Descritpion Template
-Person Side Project Portfolio. Also included a few resources on side that I found helpful.
-
-Common Tag: data-science, python, data-visualization, sql, data-analytics, excel
-
-# <a href="https://github.com/bdfd"><img height=40 src="https://cdn.jsdelivr.net/gh/bdfd/Personal_Image_Repo/4.Stamp/BDFD_Stamp.png" alt="GitHub Followers" /></a>$(Project_Name{Github})[![View My Profile]
+# <a href="https://github.com/bdfd"><img height=40 src="https://cdn.jsdelivr.net/gh/bdfd/Personal_Image_Repo/4.Stamp/BDFD_Stamp.png" alt="GitHub Followers" /></a>Car Price Prediction
 
 <a href="https://github.com/bdfd"><img src="https://img.shields.io/github/followers/bdfd?label=Follow%20Me&logo=github" alt="GitHub Followers" /></a>
-![ViewCount](<https://views.whatilearened.today/views/github/$(github_user)/$(repo_address).svg?cache=remove>)
-![GitHub top language](<https://img.shields.io/github/languages/top/$(github_user)/$(repo_address)?style=flat>)
-![GitHub language count](<https://img.shields.io/github/languages/count/$(github_user)/$(repo_address)?style=flat>)
+![ViewCount](https://views.whatilearened.today/views/github/bdfd/Section6.Project01-Car-Price-Predictor.svg?cache=remove)
+![GitHub top language](https://img.shields.io/github/languages/top/bdfd/Section6.Project01-Car-Price-Predictor?style=flat)
+![GitHub language count](https://img.shields.io/github/languages/count/bdfd/Section6.Project01-Car-Price-Predictor?style=flat)
 <img height=20 src="https://cdn.jsdelivr.net/gh/bdfd/Personal_Image_Repo/7.Color-Icon/Status/Finish.svg" alt="bdfd" />
-<img height=20 src="https://cdn.jsdelivr.net/gh/bdfd/Personal_Image_Repo/7.Color-Icon/Status/On_Progress.svg" alt="bdfd" />
 
 ## Applied Learning Project
 
-<img height="27" src="https://img.shields.io/badge/Prediction using Supervised ML -Level  Beginner-green.svg?&style=for-the-badge&logo=TheSparksFoundation&logoColor=red" />  
-<img height="27" src="https://img.shields.io/badge/Prediction using Supervised ML -Level  Intermediate-blue.svg?&style=for-the-badge&logo=TheSparksFoundation&logoColor=red" />  
-<img height="27" src="https://img.shields.io/badge/Prediction using Supervised ML -Level  Advanced-red.svg?&style=for-the-badge&logo=TheSparksFoundation&logoColor=red" />
+<img height="27" src="https://img.shields.io/badge/Prediction using Supervised ML -Level  Intermediate-blue.svg?&style=for-the-badge&logo=TheSparksFoundation&logoColor=red" />
 
 **Tools:** Colab/Jupyter Notebook, GitHub
 
-**Algorithm Category:** Regression, Classification
+**Algorithm Category:** Linear Regression
 
-**Purpose:** Data Cleaning, Apply Algorithm
+**Purpose:** Data Cleaning, Apply Algorithm Model
 
-**Algorithm:** Univariate Linear Regression, Multivariate Linear Regression
+**Algorithm:** Multivariate Linear Regression
 
 **Libraries:** Pandas, NumPy, Scikit-Learn, Matplotlib, Seaborn, Execdata
 
-**Projects:** ABC Project Name
+**Projects:** Car Price Prediction
 
 **Problem Description**  
-Predict the porfit of startup compnay with folloing fileds
+Predict the price for car with specially year, model, fule type and kms driven
 
-**Problem Task**  
-Predict the porfit of startup compnay with folloing fileds
+**Problem Variables**
 
-**Problem Variables**  
-There are two tables could be merged by ID
-
-| Field              | Description          | Unit      | dtype               | Comments        |
-| ------------------ | -------------------- | --------- | ------------------- | --------------- |
-| Table 1            | housing.csv          |           | Table Name          | ----------      |
-| Longitude          | Location             |           | Continuous          | ----------      |
-| Latitude           | Location             |           | Continuous          | ----------      |
-| Housing Median Age | Age                  |           | Continuous          | ----------      |
-| Total Rooms        | Total Living Area    |           | Continuous          | ----------      |
-| Total Bedrooms     | Bedroom Area Count   |           | Continuous          | ----------      |
-| Population         | Number of People     |           | Continuous          | ----------      |
-| Households         | Number of Households |           | Continuous          | ----------      |
-| Median Income      | Average Income       |           | Constant            | ----------      |
-| Median House Value | Average House Value  | US Dollar | Binary Category     | Traget Variable |
-| Ocean Proximity    | How Far Near Ocean   |           | Non Binary Category | ----------      |
+| Field      | Description             | Unit | dtype      | Comments   |
+| ---------- | ----------------------- | ---- | ---------- | ---------- |
+| Table 1    | Car_Munging_Data.csv    |      | Table Name | ---------- |
+| name       | car model               |      | Category   | ---------- |
+| company    | manufacture car company |      | Category   | ---------- |
+| year       | car make year           |      | Continuous | ---------- |
+| kms driven | distance drived         |      | Continuous | ---------- |
+| fuel type  | car fuel type           |      | Category   | ---------- |
 
 **Reference:**
 
@@ -61,14 +44,16 @@ There are two tables could be merged by ID
 
 <!-- Resource Reference:<a href="https://github.com/rajtilakls2510/car_price_predictor"><Resource Name-Github> Github Repository Reference</a>   -->
 
-Dateset:<a href="https://raw.githubusercontent.com/bdfd/Portfolio_Project_10-Salary_Prediction/main/dataset/Salary.csv">Original Dataset.csv</a>  
-Dateset:<a href="https://raw.githubusercontent.com/bdfd/Portfolio_Project_10-Salary_Prediction/main/dataset/Salary.csv">Processed Dataset.csv</a>  
-Train Processed Dataset:<a href="https://raw.githubusercontent.com/bdfd/Portfolio_Project_10-Salary_Prediction/main/display%20demo/train_x.csv">Train_X.csv</a>,
-<a href="https://raw.githubusercontent.com/bdfd/Portfolio_Project_10-Salary_Prediction/main/display%20demo/train_y.csv">Train_y.csv</a>  
-Test Processed Dataset:<a href="https://raw.githubusercontent.com/bdfd/Portfolio_Project_10-Salary_Prediction/main/display%20demo/test_x.csv">Test_X.csv</a>,
-<a href="https://raw.githubusercontent.com/bdfd/Portfolio_Project_10-Salary_Prediction/main/display%20demo/test_y.csv">Test_y.csv</a>  
-Demo:<a href="https://github.com/bdfd/Portfolio_Project_10-Salary_Prediction/blob/main/Salary_Prediction.ipynb">Jupyter Notebook/Colab Link</a>  
-Visualization:<a href="https://github.com/bdfd/Section6.Project04_Customer_Segmentation/blob/main/display%20demo/Clustering_Bivariate.png">Train Result</a>,<a href="https://github.com/bdfd/Portfolio_Project_10-Salary_Prediction/blob/main/display%20demo/test%20result.png">Test Result</a>
+Dateset:<a href="https://raw.githubusercontent.com/bdfd/Section6.Project01-Car-Price-Predictor/main/dataset/quikr_car.csv">Original Dataset.csv</a>  
+Dateset:<a href="https://raw.githubusercontent.com/bdfd/Section6.Project01-Car-Price-Predictor/main/dataset/Car_Preprocessed_Data.csv">First Processed Dataset.csv</a>  
+Dateset:<a href="https://raw.githubusercontent.com/bdfd/Section6.Project01-Car-Price-Predictor/main/dataset/Car_Munging_Data.csv">Processed Dataset.csv</a>
+
+<!-- Train Dataset:<a href="https://raw.githubusercontent.com/bdfd/Portfolio_Project_10-Salary_Prediction/main/display%20demo/train_x.csv">Train_X.csv</a>,
+<a href="https://raw.githubusercontent.com/bdfd/Portfolio_Project_10-Salary_Prediction/main/display%20demo/train_y.csv">Train_y.csv</a>
+Test Dataset:<a href="https://raw.githubusercontent.com/bdfd/Portfolio_Project_10-Salary_Prediction/main/display%20demo/test_x.csv">Test_X.csv</a>,
+<a href="https://raw.githubusercontent.com/bdfd/Portfolio_Project_10-Salary_Prediction/main/display%20demo/test_y.csv">Test_y.csv</a>   -->
+
+Demo:<a href="https://github.com/bdfd/Section6.Project01-Car-Price-Predictor/blob/main/Car_Price_Predictor.ipynb">Jupyter Notebook/Colab Link</a>  
 <br>
 
 <div align="center">
