@@ -2,7 +2,7 @@
  * @Date         : 2023-10-20 14:26:16
  * @Author       : BDFD,bdfd2005@gmail.com
  * @Github       : https://github.com/bdfd
- * @LastEditTime : 2023-10-26 11:54:44
+ * @LastEditTime : 2023-10-26 12:59:41
  * @LastEditors  : BDFD
  * @Description  : 
  * @FilePath     : \predict\templates\homepage\Car_Submit_Form.html
@@ -13,7 +13,7 @@
     name="PredictionForm">
     <div class="input-group">
         <span
-            style="font-family:楷体;font-size:14px;margin-left:6px">项目描述（选填）&nbsp&nbsp</span>
+            style="font-family:楷体;font-size:14px;margin-left:6px"><b>项目描述(选填):</b></span>
         <div>
             <input type=" text" class="form-control" name="mingzi"
                 value="{{mingzi}}"
@@ -32,64 +32,50 @@
             <option value="{{ company }}">{{ company }}</option>
             {% endfor %}
         </select>
-    </div>
+    </div><br />
     <div class="col-md-10 form-group" style="text-align: center">
-        <label><b>Select the model:</b> </label><br>
+        <label><b>Select the Model:</b> </label><br>
         <select class="selectpicker form-control" id="car_models"
             name="car_models" required="1">
             {% if name %}
             <option value="{{ name }}">{{ name }}</option>
             {% endif %}
         </select>
+    </div><br />
+    <div class="col-md-10 form-group" style="text-align: center">
+        <label><b>Select the Car Manufacture Year:</b> </label><br>
+        <select class="selectpicker form-control" id="year" name="year"
+            required="1">
+            {% if year %}
+            <option value="{{ year }}">{{ year }}</option>
+            {% endif %}
+            {% for year in year_lists %}
+            <option value="{{ year }}">{{ year }}</option>
+            {% endfor %}
+        </select>
     </div>
-    <!-- <div class="input-group">
-        <div>
-            <label><b>Select the Car Company:</b> </label><br>
-            <select class="selectpicker form-control" id="company"
-                name="company" required="1"
-                onchange="load_car_models(this.id,'car_models')">
-                {% for company in companies %}
-                <option value="{{ company }}">{{ company }}</option>
-                {% endfor %}
-            </select>
-        </div>
-        <div>
-            <label><b>Select the model:</b> </label><br>
-            <select class="selectpicker form-control" id="car_models"
-                name="car_models" required="1">
-            </select>
-        </div>
-    </div> -->
+    <br />
+    <div class="col-md-10 form-group" style="text-align: center">
+        <label><b>Select the Car Fuel Type:</b> </label><br>
+        <select class="selectpicker form-control" id="fuel_type"
+            name="fuel_type" required="1">
+            {% if fuel_type %}
+            <option value="{{ fuel_type }}">{{ fuel_type }}</option>
+            {% endif %}
+            {% for fuel_type in fuel_type_lists %}
+            <option value="{{ fuel_type }}">{{ fuel_type }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <br />
     <div class="input-group">
-        <span
-            style="font-family:'Times New Roman',楷体;font-size:14px;margin-left:6px">Year&nbsp(m)
-            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
-        <div><input type=" text" class="form-control" name="year"
-                value="{{year}}"
-                style="height:25px;width:175px;font-size:14px;;border-radius:5px">
-        </div>
-        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-        <span
-            style="font-family:'Times New Roman',楷体;font-size:14px;margin-left:6px">KMs
-            Driven&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+        <label><b>Select the Car km Driven:</b> </label>
         <div>
             <input type=" text" class="form-control" name="kms_driven"
                 value="{{kms_driven}}"
-                style="height:25px;width:175px;font-size:14px;;border-radius:5px">
+                style="height:25px;width:475px;font-size:14px;margin-left:10px;border-radius:5px">
         </div>
     </div>
-    <br />
-    <div class="input-group">
-        <span
-            style="font-family:'Times New Roman',楷体;font-size:14px;margin-left:6px">Fuel
-            Type&nbsp&nbsp&nbsp&nbsp</span>
-        <div><input type=" text" class="form-control" name="fuel_type"
-                value="{{fuel_type}}"
-                style="height:25px;width:175px;font-size:14px;margin-left:5px;border-radius:5px">
-        </div>
-        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-    </div>
-    <br />
     <div style="border: 0.5px solid #CCC;margin-top:5px;">
     </div>
     <h5 style="margin-bottom:15px;margin-top:15px;" align="right">

@@ -2,7 +2,7 @@
 Date         : 2022-12-05 14:13:08
 Author       : BDFD,bdfd2005@gmail.com
 Github       : https://github.com/bdfd
-LastEditTime : 2023-10-25 15:04:16
+LastEditTime : 2023-10-26 13:20:14
 LastEditors  : BDFD
 Description  : 
 FilePath     : \app.py
@@ -19,7 +19,9 @@ app.register_blueprint(predict, url_prefix="/predict")
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    # Redirecting to the '/predict' route
+    return redirect(url_for('predict.predict_index'))
+    # return render_template('index.html')
 
 
 if __name__ == '__main__':
