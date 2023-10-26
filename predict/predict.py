@@ -2,7 +2,7 @@
 Date         : 2022-12-09 12:54:06
 Author       : BDFD,bdfd2005@gmail.com
 Github       : https://github.com/bdfd
-LastEditTime : 2023-10-25 17:48:22
+LastEditTime : 2023-10-26 12:19:59
 LastEditors  : BDFD
 Description  : 
 FilePath     : \predict\predict.py
@@ -28,26 +28,33 @@ model = temp.Car_Prediction()
 
 @predict.route('/', methods=["POST", "GET"])
 def predict_index():
-    print(company_lists)
-    print(name_lists)
-    if request.method == "POST":
+    mingzi = " "
+    name = " "
+    company = " "
+    year = " "
+    kms_driven = " "
+    fuel_type = " "
+    if request.method == "GET":
+        return render_template('homepage/predict_index.html', companies=company_lists, car_models=name_lists, 
+                                name=name, mingzi=mingzi, company=company, year=year, 
+                                kms_driven=kms_driven, fuel_type=fuel_type)
+    else:
         mingzi = request.form["mingzi"]
-        name = request.form["name"]
+        name = request.form["car_models"]
         company = request.form["company"]
         year = request.form["year"]
         year = exe.convint(year)
         kms_driven = request.form["kms_driven"]
         kms_driven = exe.convint(kms_driven)
         fuel_type = request.form["fuel_type"]
+        print(type(mingzi), type(model), type(company),
+              type(year), type(kms_driven), type(fuel_type))
+        print(name, company, year, kms_driven, fuel_type)
         prediction = model.predict(pd.DataFrame(columns=['name', 'company', 'year', 'kms_driven', 'fuel_type'],
                                                 data=np.array([name, company, year, kms_driven, fuel_type]).reshape(1, 5)))
         result = str(np.round(prediction[0], 2))
         print(result)
-        print(type(mingzi), type(name), type(company),
-              type(year), type(kms_driven), type(fuel_type))
         return render_template('homepage/predict_index.html', result=result, name=name, mingzi=mingzi, company=company, year=year, kms_driven=kms_driven, fuel_type=fuel_type)
-    else:
-        return render_template('homepage/predict_index.html', companies=company_lists, car_models=name_lists)
 
 
 # @predict.route('/home')

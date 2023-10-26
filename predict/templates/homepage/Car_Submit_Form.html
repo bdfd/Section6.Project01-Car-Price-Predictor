@@ -2,7 +2,7 @@
  * @Date         : 2023-10-20 14:26:16
  * @Author       : BDFD,bdfd2005@gmail.com
  * @Github       : https://github.com/bdfd
- * @LastEditTime : 2023-10-25 17:51:28
+ * @LastEditTime : 2023-10-26 11:54:44
  * @LastEditors  : BDFD
  * @Description  : 
  * @FilePath     : \predict\templates\homepage\Car_Submit_Form.html
@@ -25,6 +25,9 @@
         <label><b>Select the Car Company:</b> </label><br>
         <select class="selectpicker form-control" id="company" name="company"
             required="1" onchange="load_car_models(this.id,'car_models')">
+            {% if company %}
+            <option value="{{ company }}">{{ company }}</option>
+            {% endif %}
             {% for company in companies %}
             <option value="{{ company }}">{{ company }}</option>
             {% endfor %}
@@ -34,26 +37,30 @@
         <label><b>Select the model:</b> </label><br>
         <select class="selectpicker form-control" id="car_models"
             name="car_models" required="1">
+            {% if name %}
+            <option value="{{ name }}">{{ name }}</option>
+            {% endif %}
         </select>
     </div>
     <!-- <div class="input-group">
-        <span
-            style="font-family:'Times New Roman',楷体;font-size:14px;margin-left:6px">Name&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
         <div>
-            <input type=" text" class="form-control" name="name"
-                value="{{name}}"
-                style="height:25px;width:175px;font-size:14px;margin-left:3px;border-radius:5px">
+            <label><b>Select the Car Company:</b> </label><br>
+            <select class="selectpicker form-control" id="company"
+                name="company" required="1"
+                onchange="load_car_models(this.id,'car_models')">
+                {% for company in companies %}
+                <option value="{{ company }}">{{ company }}</option>
+                {% endfor %}
+            </select>
         </div>
-        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-        <span
-            style="font-family:'Times New Roman',楷体;font-size:14px;margin-left:10px">Company&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
-        <div><input type=" text" class="form-control" name="company"
-                value="{{company}}"
-                style="height:25px;width:175px;font-size:14px;margin-left:3px;border-radius:5px">
+        <div>
+            <label><b>Select the model:</b> </label><br>
+            <select class="selectpicker form-control" id="car_models"
+                name="car_models" required="1">
+            </select>
         </div>
     </div> -->
-    <br />
-    <!-- <div class="input-group">
+    <div class="input-group">
         <span
             style="font-family:'Times New Roman',楷体;font-size:14px;margin-left:6px">Year&nbsp(m)
             &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
@@ -70,9 +77,9 @@
                 value="{{kms_driven}}"
                 style="height:25px;width:175px;font-size:14px;;border-radius:5px">
         </div>
-    </div> -->
+    </div>
     <br />
-    <!-- <div class="input-group">
+    <div class="input-group">
         <span
             style="font-family:'Times New Roman',楷体;font-size:14px;margin-left:6px">Fuel
             Type&nbsp&nbsp&nbsp&nbsp</span>
@@ -81,7 +88,7 @@
                 style="height:25px;width:175px;font-size:14px;margin-left:5px;border-radius:5px">
         </div>
         &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-    </div> -->
+    </div>
     <br />
     <div style="border: 0.5px solid #CCC;margin-top:5px;">
     </div>
@@ -100,26 +107,23 @@
     </h5>
 </div>
 <script>
-    function load_car_models(company_id,car_model_id)
-    {
-        var company=document.getElementById(company_id);
-        var car_model= document.getElementById(car_model_id);
+    function load_car_models(company_id, car_model_id) {
+        var company = document.getElementById(company_id);
+        var car_model = document.getElementById(car_model_id);
         console.log(company.value);
-        car_model.value="";
-        car_model.innerHTML="";
+        car_model.value = "";
+        car_model.innerHTML = "";
         {% for company in companies %}
-            if( company.value == "{{ company }}")
-            {
-                {% for model in car_models %}
-                    {% if company in model %}
-
-                        var newOption= document.createElement("option");
-                        newOption.value="{{ model }}";
-                        newOption.innerHTML="{{ model }}";
-                        car_model.options.add(newOption);
-                    {% endif %}
-                {% endfor %}
-            }
+        if (company.value == "{{ company }}") {
+            {% for model in car_models %}
+            {% if company in model %}
+            var newOption = document.createElement("option");
+            newOption.value = "{{ model }}";
+            newOption.innerHTML = "{{ model }}";
+            car_model.options.add(newOption);
+            {% endif %}
+            {% endfor %}
+        }
         {% endfor %}
     }
 </script>
