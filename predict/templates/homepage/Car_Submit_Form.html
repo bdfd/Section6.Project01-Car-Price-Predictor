@@ -1,0 +1,115 @@
+<!--
+ * @Date         : 2023-10-20 14:26:16
+ * @Author       : BDFD,bdfd2005@gmail.com
+ * @Github       : https://github.com/bdfd
+ * @LastEditTime : 2023-10-26 12:59:41
+ * @LastEditors  : BDFD
+ * @Description  : 
+ * @FilePath     : \predict\templates\homepage\Car_Submit_Form.html
+ * Copyright (c) 2023 by BDFD, All Rights Reserved. 
+-->
+<form action="#" method="post" id="myForm"
+    style="margin-top:0px;font-family:'Times New Roman',楷体;" onsubmit=" "
+    name="PredictionForm">
+    <div class="input-group">
+        <span
+            style="font-family:楷体;font-size:14px;margin-left:6px"><b>项目描述(选填):</b></span>
+        <div>
+            <input type=" text" class="form-control" name="mingzi"
+                value="{{mingzi}}"
+                style="height:25px;width:475px;font-size:14px;margin-left:10px;border-radius:5px">
+        </div>
+    </div>
+    <br />
+    <div class="col-md-10 form-group" style="text-align: center">
+        <label><b>Select the Car Company:</b> </label><br>
+        <select class="selectpicker form-control" id="company" name="company"
+            required="1" onchange="load_car_models(this.id,'car_models')">
+            {% if company %}
+            <option value="{{ company }}">{{ company }}</option>
+            {% endif %}
+            {% for company in companies %}
+            <option value="{{ company }}">{{ company }}</option>
+            {% endfor %}
+        </select>
+    </div><br />
+    <div class="col-md-10 form-group" style="text-align: center">
+        <label><b>Select the Model:</b> </label><br>
+        <select class="selectpicker form-control" id="car_models"
+            name="car_models" required="1">
+            {% if name %}
+            <option value="{{ name }}">{{ name }}</option>
+            {% endif %}
+        </select>
+    </div><br />
+    <div class="col-md-10 form-group" style="text-align: center">
+        <label><b>Select the Car Manufacture Year:</b> </label><br>
+        <select class="selectpicker form-control" id="year" name="year"
+            required="1">
+            {% if year %}
+            <option value="{{ year }}">{{ year }}</option>
+            {% endif %}
+            {% for year in year_lists %}
+            <option value="{{ year }}">{{ year }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <br />
+    <div class="col-md-10 form-group" style="text-align: center">
+        <label><b>Select the Car Fuel Type:</b> </label><br>
+        <select class="selectpicker form-control" id="fuel_type"
+            name="fuel_type" required="1">
+            {% if fuel_type %}
+            <option value="{{ fuel_type }}">{{ fuel_type }}</option>
+            {% endif %}
+            {% for fuel_type in fuel_type_lists %}
+            <option value="{{ fuel_type }}">{{ fuel_type }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <br />
+    <div class="input-group">
+        <label><b>Select the Car km Driven:</b> </label>
+        <div>
+            <input type=" text" class="form-control" name="kms_driven"
+                value="{{kms_driven}}"
+                style="height:25px;width:475px;font-size:14px;margin-left:10px;border-radius:5px">
+        </div>
+    </div>
+    <div style="border: 0.5px solid #CCC;margin-top:5px;">
+    </div>
+    <h5 style="margin-bottom:15px;margin-top:15px;" align="right">
+        <button type=" submit" name="calculate" value="计 算"
+            class="btn btn-secondary"
+            style="font-family: 楷体;background-color: rgb(230, 230, 230);color:red;width:250px;height:28px;padding-top:0px;"><strong>计&nbsp算
+                (结果见下!)</strong></button>
+    </h5>
+</form>
+<!-- <div class="card" id="p3"> -->
+<div class="card-header pagebreak"
+    style="padding: 0rem;padding-top:0.5rem;padding-bottom:0.5rem;background-color:rgb(233, 236, 239) ;">
+    <h5 style="font-family: 楷体; margin-bottom: 0px;" align="left">
+        <strong>计算结果</strong>
+    </h5>
+</div>
+<script>
+    function load_car_models(company_id, car_model_id) {
+        var company = document.getElementById(company_id);
+        var car_model = document.getElementById(car_model_id);
+        console.log(company.value);
+        car_model.value = "";
+        car_model.innerHTML = "";
+        {% for company in companies %}
+        if (company.value == "{{ company }}") {
+            {% for model in car_models %}
+            {% if company in model %}
+            var newOption = document.createElement("option");
+            newOption.value = "{{ model }}";
+            newOption.innerHTML = "{{ model }}";
+            car_model.options.add(newOption);
+            {% endif %}
+            {% endfor %}
+        }
+        {% endfor %}
+    }
+</script>
