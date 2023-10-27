@@ -12,6 +12,9 @@
 
 <img height="27" src="https://img.shields.io/badge/Prediction using Supervised ML -Level  Intermediate-blue.svg?&style=for-the-badge&logo=TheSparksFoundation&logoColor=red" />
 
+### Project Demo Link - [Click Here](https://car-price-prediction-9dgn.onrender.com/predict/)
+![Car Prediction](https://cdn.jsdelivr.net/gh/bdfd/Section6.Project01-Car_Price_Predictor/predict/static/images/Car_Prediction.png)
+
 **Tools:** Colab/Jupyter Notebook, GitHub
 
 **Algorithm Category:** Linear Regression
