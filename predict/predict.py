@@ -2,7 +2,7 @@
 Date         : 2022-12-09 12:54:06
 Author       : BDFD,bdfd2005@gmail.com
 Github       : https://github.com/bdfd
-LastEditTime : 2023-10-26 12:49:25
+LastEditTime : 2023-11-06 14:31:50
 LastEditors  : BDFD
 Description  : 
 FilePath     : \predict\predict.py
@@ -29,7 +29,7 @@ year_lists = df['year'].unique().tolist()
 year_lists.sort()
 fuel_type_lists = df['fuel_type'].unique().tolist()
 fuel_type_lists.sort()
-model = temp.Car_Prediction()
+model = temp.supervised_classification.Car_Prediction()
 
 
 @predict.route('/', methods=["POST", "GET"])
