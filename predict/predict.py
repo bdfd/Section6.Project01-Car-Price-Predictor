@@ -2,7 +2,7 @@
 Date         : 2022-12-09 12:54:06
 Author       : BDFD,bdfd2005@gmail.com
 Github       : https://github.com/bdfd
-LastEditTime : 2023-11-06 14:31:50
+LastEditTime : 2023-11-06 17:52:21
 LastEditors  : BDFD
 Description  : 
 FilePath     : \predict\predict.py
@@ -29,7 +29,6 @@ year_lists = df['year'].unique().tolist()
 year_lists.sort()
 fuel_type_lists = df['fuel_type'].unique().tolist()
 fuel_type_lists.sort()
-model = temp.supervised_classification.Car_Prediction()
 
 
 @predict.route('/', methods=["POST", "GET"])
@@ -47,20 +46,22 @@ def predict_index():
                                name=name, mingzi=mingzi, company=company, year=year,
                                kms_driven=kms_driven, fuel_type=fuel_type)
     else:
+        para_list = []
         mingzi = request.form["mingzi"]
+        # para_list.append(mingzi)
         name = request.form["car_models"]
+        para_list.append(name)
         company = request.form["company"]
-        year = request.form["year"]
-        year = exe.convint(year)
-        kms_driven = request.form["kms_driven"]
-        kms_driven = exe.convint(kms_driven)
+        para_list.append(company)
+        year = exe.convint(request.form["year"])
+        para_list.append(year)
+        kms_driven = exe.convint(request.form["kms_driven"])
+        para_list.append(kms_driven)
         fuel_type = request.form["fuel_type"]
-        # print(type(mingzi), type(model), type(company),
-        #       type(year), type(kms_driven), type(fuel_type))
-        # print(name, company, year, kms_driven, fuel_type)
-        prediction = model.predict(pd.DataFrame(columns=['name', 'company', 'year', 'kms_driven', 'fuel_type'],
-                                                data=np.array([name, company, year, kms_driven, fuel_type]).reshape(1, 5)))
-        result = str(np.round(prediction[0], 2))
+        para_list.append(fuel_type)
+        print(para_list)
+        result = temp.supervised_classification.Car_Prediction_0601(para_list)
+        result = str(np.round(result, 2))
         print(result)
         return render_template('homepage/predict_index.html', result=result, name=name, mingzi=mingzi, company=company, year=year, kms_driven=kms_driven, fuel_type=fuel_type)
 
