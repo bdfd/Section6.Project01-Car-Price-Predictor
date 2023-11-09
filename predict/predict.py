@@ -2,7 +2,7 @@
 Date         : 2022-12-09 12:54:06
 Author       : BDFD,bdfd2005@gmail.com
 Github       : https://github.com/bdfd
-LastEditTime : 2023-11-06 17:52:21
+LastEditTime : 2023-11-09 10:48:42
 LastEditors  : BDFD
 Description  : 
 FilePath     : \predict\predict.py
@@ -59,11 +59,15 @@ def predict_index():
         para_list.append(kms_driven)
         fuel_type = request.form["fuel_type"]
         para_list.append(fuel_type)
-        print(para_list)
+        # print(para_list)
         result = temp.supervised_classification.Car_Prediction_0601(para_list)
         result = str(np.round(result, 2))
-        print(result)
-        return render_template('homepage/predict_index.html', result=result, name=name, mingzi=mingzi, company=company, year=year, kms_driven=kms_driven, fuel_type=fuel_type)
+        # print(result)
+        return render_template('homepage/predict_index.html', result=result, name=name, mingzi=mingzi,
+                               company=company, year=year, kms_driven=kms_driven, fuel_type=fuel_type,
+                               companies=company_lists, car_models=name_lists,
+                               year_lists=year_lists, fuel_type_lists=fuel_type_lists,
+                               )
 
 
 # @predict.route('/home')
